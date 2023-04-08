@@ -1,11 +1,9 @@
 @extends('layout')
 
 @section('content')
-<h1>{{$heading}}</h1>
-@if (count($listings)==0)
-    <p> There is no Jobs available</p>
-@endif
 
+@include('partials._hero')
+@include('partials._search')
     <div class="lg:grid lg:grid-cols-2 gap-4 space-y-4 md:space-y-0 mx-4">
         @foreach ($listings as $listing)
                 <!-- Item 1 -->
@@ -13,7 +11,7 @@
                     <div class="flex">
                         <img
                             class="hidden w-48 mr-6 md:block"
-                            src="images/acme.png"
+                            src="images/no-image.png"
                             alt=""
                         />
                         <div>
@@ -50,7 +48,9 @@
                     </div>
                 </div>
                 <!-- Item 2 -->
+                @endforeach
             </div>
-
-@endforeach
+     @if (count($listings)==0)
+    <p> There is no Jobs available</p>
+@endif
 @endsection
