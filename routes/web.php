@@ -37,8 +37,13 @@ Route::Put('/listings/{listing}', [ListingController::class,'update'])->middlewa
 //Delete route
 Route::delete('/listings/{listing}', [ListingController::class,'destroy'])->middleware('auth');
 
+//Manage listings
+Route::get('/listings/manage', [ListingController::class,'manage'])->middleware('auth');
+
 //single listing Route Model Binding feature
 Route::get('/listings/{listing}', [ListingController::class,'show']);
+
+
 
 //Delete route
 Route::get('/users/register', [UserController::class,'register'])->middleware('guest');

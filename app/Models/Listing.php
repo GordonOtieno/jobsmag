@@ -9,7 +9,7 @@ class Listing extends Model
 {
     use HasFactory;
  //you can as well allow mass assignment on appServiceProvider file
-  protected $fillable =['title','company','logo','location','website','email','description','tags'];
+  protected $fillable =['title','company','logo','user_id','location','website','email','description','tags'];
 
     //scope filters work with controller
     public function scopeFilter($query, array $filters){
@@ -25,5 +25,11 @@ class Listing extends Model
             ->orWhere('tags','like','%'.request('search').'%');
 
         }
+    }
+
+    //relationship to users
+
+    public function user(){
+        return $this->belongsTo(User::class, 'user_id');
     }
 }
