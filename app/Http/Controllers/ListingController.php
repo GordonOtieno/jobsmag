@@ -10,8 +10,9 @@ class ListingController extends Controller
 {
     //
     public function index(){
+        // dd(Listing::latest()->filter(request(['tag','search']))->paginate(2));
         return view('listings.index',[
-            'listings' => Listing::latest()->filter(request(['tag','search']))->get()
+            'listings' => Listing::latest()->filter(request(['tag','search']))->paginate(6)
         ]);
 
     }
@@ -27,7 +28,7 @@ class ListingController extends Controller
 
     public function store(Request $request)
 {
-    // dd($request->all());
+//    dd($request->file('logo')->store());
     $formFields = $request->validate([
         'title' => 'required',
         'company' => ['required', Rule::unique('listings', 'company')],
@@ -37,6 +38,11 @@ class ListingController extends Controller
         'tags' => 'required',
         'description' => 'required'
     ]);
+
+    if($request->hasFile('logo')){
+        $formFields['logo'] = $request->file('logo')->store('logos', 'public');
+    }
+
     Listing::create($formFields);
 
     // Add error handling logic here if needed
