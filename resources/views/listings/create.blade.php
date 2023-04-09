@@ -7,7 +7,7 @@
                         <p class="mb-4">Post a Job to find a developer</p>
                     </header>
 
-                    <form action="/listings/store" method="POST">
+                    <form action="/listings/store" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-6">
                             <label
@@ -119,6 +119,9 @@
                                 name="logo"
                                 value="{{old('logo')}}"
                             />
+                            @error('logo')
+                            <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                           @enderror
                         </div>
 
                         <div class="mb-6">

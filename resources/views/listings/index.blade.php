@@ -11,4 +11,7 @@
      @if (count($listings)==0)
     <p> There is no Jobs available</p>
 @endif
+  <div class="mt-6 p-4">
+    {{$listings ->links()}}
+  </div>
         </x-layout>
