@@ -9,7 +9,7 @@ class Listing extends Model
 {
     use HasFactory;
  //you can as well allow mass assignment on appServiceProvider file
-  protected $fillable =['title','company','location','website','email','description','tags'];
+  protected $fillable =['title','company','logo','location','website','email','description','tags'];
 
     //scope filters work with controller
     public function scopeFilter($query, array $filters){
