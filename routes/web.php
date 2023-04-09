@@ -27,6 +27,15 @@ Route::get('/listings/create', [ListingController::class,'create']);
 //store route
 Route::post('/listings/store', [ListingController::class,'store']);
 
+//edit route
+Route::get('/listings/{listing}/edit', [ListingController::class,'edit']);
+
+//Update route
+Route::Put('/listings/{listing}', [ListingController::class,'update']);
+
+//Delete route
+Route::delete('/listings/{listing}', [ListingController::class,'destroy']);
+
 //single listing Route Model Binding feature
 Route::get('/listings/{listing}', [ListingController::class,'show']);
 
