@@ -21,9 +21,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Hello React Rails Frontend <a name="about-project"></a>
-> This is the Frontend of an educational project for testing the integration of rails and react. It's mainly built using Ruby on Rails.
-> [Link for the backend](https://github.com/GordonOtieno/hello-rails-back-end)
+# 📖 JobsMag <a name="about-project"></a>
+> JobsMag is a system where software developer can find and apply for developer jobs. This system allows recruiters to post the available vacancies and provide required teh stack for applicants
+
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -34,27 +34,24 @@
 <details>
   <summary>Client</summary>
   <ul>
-    <li><a href="https://reactjs.org/">React.js</a></li>
+    <li><a href="https://reactjs.org/">php</a></li>
+    <li><a href="https://reactjs.org/">tailwind css</a></li>
+    <li><a href="https://reactjs.org/">Laravel</a></li>
   </ul>
 </details>
-
-<details>
-  <summary>Server</summary>
-  <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
-  </ul>
-</details>
-
 <details>
 <summary>Database</summary>
   <ul>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+    <li><a href="https://www.mysql.com/">Mysql</a></li>
   </ul>
 </details>
 
 <!-- Features -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🚀 Screenshort <a name="live-demo"></a>
+![Alt text](laravel.jpg?raw=true "Optional Title")
 
 <!-- LIVE DEMO -->
 
@@ -80,7 +77,10 @@ To get a local copy up and running, follow these steps.
 Clone this repository to your desired folder:
 
 ```sh
-  cd my-folder
+  Make sure postgres or mysql db is installed in your system.
+  Make sure composer is installed.
+
+  cd desired folder
   git clone
 ```
 
@@ -88,35 +88,22 @@ Clone this repository to your desired folder:
 
 Install this project with:
 ```sh
-  cd hello-react-front-end
-  bundle install
-  yarn add react-dom react-redux @reduxjs/toolkit axios
-<!--
-Example command:
+  cd jobsmag
+  composer install
+  php artisan migrate
+  php artisan db:seed
 
-```sh
-  cd hello-react-front-end
-  gem install
-```
---->
-
-   ### Usage
+  When uploading listing files, they go to "storage/app/public". Create a symlink with the following command to make them publicly accessible.
+  php artisan storage:link
 
 To run the project, execute the following command:
 
-```sh
-  ./bin/dev
+  php artisan serve
 ```
-<!--
-Example command:
 
-```sh
-  rails server
-```
---->
 ### Deployment
 
-You can deploy this project using: `render`
+You can deploy this project using: `https://www.infinityfree.net/`
 
 <!--
 Example:
@@ -130,9 +117,9 @@ Example:
 
 <!-- AUTHORS -->
 
-## 👥 Authors <a name="authors"></a>
+##  Authors <a name="author"></a>
 
-👤 **Author1**
+👤 **Author**
 
 - GitHub: [@gordonotieno](https://github.com/GordonOtieno)
 - Twitter: [@GordonOtieno](https://twitter.com/GordonO34459259)
